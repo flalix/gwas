@@ -1,4 +1,5 @@
-# SMART — Somatic Mutation Annotation and Reporting Tool <a href="#"><img src="assets/SMART_logo_docker.png" align="right" height="120"/></a>
+# 2 GWAS studies + SMART (Somatic Mutation Annotation and Reporting Tool)
+
 
 This is an study related to the SMART project - forked from https://github.com/WeTGI-colab/SMART
 
