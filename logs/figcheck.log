@@ -1,0 +1,8 @@
+14:39:51 INFO    logging to /home/flavio/uv/gwas/logs/figcheck.log
+14:39:51 INFO    696660 variants tested, 0 with a non-'.' ERRCODE
+14:39:51 INFO    Firth fallback used for 0 variants
+14:39:53 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/figures/penncath_manhattan_qq.png
+14:40:11 INFO    logging to /home/flavio/uv/gwas/logs/figcheck.log
+14:40:11 INFO    696660 variants tested, 0 with a non-'.' ERRCODE
+14:40:11 INFO    Firth fallback used for 0 variants
+14:40:13 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/figures/penncath_manhattan_qq.png

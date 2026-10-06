@@ -1,0 +1,112 @@
+11:47:19 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+11:47:20 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+11:47:22 INFO    chr20: 64444167 bases, fetching 65364798 bytes from offset 2751788762
+11:47:32 INFO    checksum ok (M5 b18e6c531b0bd70e949a7fc20859cb01)
+11:47:32 INFO    $ samtools faidx /home/flavio/uv/gwas/data/reference/GRCh38_chr20.fa
+11:47:32 INFO    ok (0.1s)
+11:47:32 INFO    $ gatk CreateSequenceDictionary -R /home/flavio/uv/gwas/data/reference/GRCh38_chr20.fa -O /home/flavio/uv/gwas/data/reference/GRCh38_chr20.dict
+11:47:33 INFO    ok (0.9s)
+11:47:33 INFO    building bwa-mem2 index (~1.6 GB RAM, ~15 s for chr20)
+11:47:33 INFO    $ bwa-mem2 index /home/flavio/uv/gwas/data/reference/GRCh38_chr20.fa
+11:47:46 INFO    ok (13.1s)
+11:47:46 INFO    resolving CRAM for NA12718
+11:47:48 INFO    CRAM: https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram
+11:47:48 INFO    $ samtools view -T /home/flavio/uv/gwas/data/reference/GRCh38_chr20.fa -b -o /home/flavio/uv/gwas/data/chr20_test/interim/NA12718_chr20_1000000-1500000.bam https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram chr20:1000000-1500000
+11:47:57 INFO    ok (8.6s)
+11:47:57 INFO    $ samtools collate -@ 4 -o /home/flavio/uv/gwas/data/chr20_test/interim/NA12718_chr20_1000000-1500000.collated.bam /home/flavio/uv/gwas/data/chr20_test/interim/NA12718_chr20_1000000-1500000.bam
+11:47:58 INFO    ok (1.8s)
+11:47:58 INFO    $ samtools fastq -@ 4 -1 /home/flavio/uv/gwas/data/chr20_test/raw/NA12718_chr20_1000000-1500000_R1.fastq.gz -2 /home/flavio/uv/gwas/data/chr20_test/raw/NA12718_chr20_1000000-1500000_R2.fastq.gz -0 /dev/null -s /dev/null -n /home/flavio/uv/gwas/data/chr20_test/interim/NA12718_chr20_1000000-1500000.collated.bam
+11:47:59 INFO    ok (0.1s)
+11:47:59 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr20.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr20.vcf.gz
+11:50:10 INFO    ok (131.2s)
+11:50:10 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs.txt -Oz -o /home/flavio/uv/gwas/data/reference/ensembl_chr20_known_sites.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr20.vcf.gz
+11:50:10 ERROR   exit 255 after 0.0s
+11:50:10 ERROR   stdout tail:
+
+11:50:10 ERROR   stderr tail:
+[W::bcf_hrec_check] Invalid tag name: "HGMD-PUBLIC_20204"
+[W::bcf_hrec_check] Invalid tag name: "HGMD-PUBLIC_20204"
+[W::vcf_parse] Contig '20' is not defined in the header. (Quick workaround: index the file with tabix.)
+[W::vcf_parse] Missing headers may cause later processing to fail
+Encountered an error, cannot proceed. Please check the error output above.
+If feeling adventurous, use the --force option. (At your own risk!)
+11:50:38 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+11:50:38 INFO    GRCh38_chr20.fa already present
+11:50:38 INFO    resolving CRAM for NA12718
+11:50:40 INFO    CRAM: https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram
+11:50:40 INFO    NA12718_chr20_1000000-1500000_R1.fastq.gz / NA12718_chr20_1000000-1500000_R2.fastq.gz already present
+11:50:40 INFO    ensembl_chr20_known_sites.vcf.gz already present
+11:50:40 INFO    R1 4.8 MB, R2 4.9 MB
+11:50:40 INFO    manifest written to results/fastq_testdata.json
+11:51:25 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+11:51:25 INFO    GRCh38_chr20.fa already present
+11:51:25 INFO    resolving CRAM for NA12718
+11:51:27 INFO    CRAM: https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram
+11:51:27 INFO    NA12718_chr20_1000000-1500000_R1.fastq.gz / NA12718_chr20_1000000-1500000_R2.fastq.gz already present
+11:51:27 INFO    discarding empty ensembl_chr20_known_sites.vcf.gz from an earlier failed run
+11:51:27 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr20.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr20.vcf.gz.csi
+11:51:28 INFO    ok (1.2s)
+11:51:28 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs.txt -Oz -o /home/flavio/uv/gwas/data/reference/ensembl_chr20_known_sites.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr20.vcf.gz
+11:51:50 INFO    ok (21.1s)
+11:51:50 INFO    $ bcftools index -t /home/flavio/uv/gwas/data/reference/ensembl_chr20_known_sites.vcf.gz
+11:51:53 INFO    ok (3.0s)
+11:51:53 INFO    R1 4.8 MB, R2 4.9 MB
+11:51:53 INFO    manifest written to results/fastq_testdata.json
+18:31:45 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+18:31:45 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+18:31:45 INFO    GRCh38_chr20.fa already present
+18:31:45 INFO    resolving CRAM for NA12718
+18:31:48 INFO    CRAM: https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram
+18:31:48 INFO    NA12718_chr20_1000000-1500000_R1.fastq.gz / NA12718_chr20_1000000-1500000_R2.fastq.gz already present
+18:31:48 INFO    ensembl_chr20_known_sites.vcf.gz already present
+18:31:48 INFO    R1 4.8 MB, R2 4.9 MB
+18:31:48 INFO    manifest written to results/fastq_testdata.json
+18:55:04 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+18:55:04 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+18:55:04 INFO    GRCh38_chr20.fa already present
+18:55:04 INFO    resolving CRAM for NA12718
+18:55:06 INFO    CRAM: https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram
+18:55:06 INFO    NA12718_chr20_1000000-1500000_R1.fastq.gz / NA12718_chr20_1000000-1500000_R2.fastq.gz already present
+18:55:06 INFO    ensembl_chr20_known_sites.vcf.gz already present
+18:55:06 INFO    R1 4.8 MB, R2 4.9 MB
+18:55:06 INFO    manifest written to results/fastq_testdata.json
+18:58:47 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+18:58:47 INFO    GRCh38_chr20.fa already present
+18:58:47 INFO    resolving CRAM for NA12718
+18:58:50 INFO    CRAM: https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram
+18:58:50 INFO    NA12718_chr20_1000000-1500000_R1.fastq.gz / NA12718_chr20_1000000-1500000_R2.fastq.gz already present
+18:58:50 INFO    ensembl_chr20_known_sites.vcf.gz already present
+18:58:50 INFO    R1 4.8 MB, R2 4.9 MB
+18:58:50 INFO    manifest written to results/fastq_testdata.json
+19:01:06 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+19:01:06 INFO    GRCh38_chr20.fa already present
+19:01:06 INFO    resolving CRAM for NA12718
+19:01:08 INFO    CRAM: https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram
+19:01:08 INFO    NA12718_chr20_1000000-1500000_R1.fastq.gz / NA12718_chr20_1000000-1500000_R2.fastq.gz already present
+19:01:08 INFO    ensembl_chr20_known_sites.vcf.gz already present
+19:01:08 INFO    R1 4.8 MB, R2 4.9 MB
+19:01:08 INFO    manifest written to results/fastq_testdata.json
+19:12:52 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+19:12:52 INFO    GRCh38_chr20.fa already present
+19:12:52 INFO    resolving CRAM for NA12718
+19:12:54 INFO    CRAM: https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram
+19:12:54 INFO    NA12718_chr20_1000000-1500000_R1.fastq.gz / NA12718_chr20_1000000-1500000_R2.fastq.gz already present
+19:12:54 INFO    ensembl_chr20_known_sites.vcf.gz already present
+19:12:54 INFO    R1 4.8 MB, R2 4.9 MB
+19:12:54 INFO    manifest written to results/fastq_testdata.json
+19:13:15 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+19:13:15 INFO    GRCh38_chr20.fa already present
+19:13:15 INFO    resolving CRAM for NA12718
+19:13:17 INFO    CRAM: https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram
+19:13:17 INFO    NA12718_chr20_1000000-1500000_R1.fastq.gz / NA12718_chr20_1000000-1500000_R2.fastq.gz already present
+19:13:17 INFO    ensembl_chr20_known_sites.vcf.gz already present
+19:13:17 INFO    R1 4.8 MB, R2 4.9 MB
+19:13:17 INFO    manifest written to results/fastq_testdata.json
+20:20:58 INFO    logging to /home/flavio/uv/gwas/logs/04_fetch_fastq_testdata.log
+20:20:58 INFO    GRCh38_chr20.fa already present
+20:20:58 INFO    resolving CRAM for NA12718
+20:21:00 INFO    CRAM: https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239480/NA12718.final.cram
+20:21:00 INFO    NA12718_chr20_1000000-1500000_R1.fastq.gz / NA12718_chr20_1000000-1500000_R2.fastq.gz already present
+20:21:00 INFO    ensembl_chr20_known_sites.vcf.gz already present
+20:21:00 INFO    R1 4.8 MB, R2 4.9 MB
+20:21:00 INFO    manifest written to results/fastq_testdata.json

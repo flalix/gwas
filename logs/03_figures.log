@@ -1,0 +1,6 @@
+10:46:23 INFO    logging to /home/flavio/uv/gwas/logs/03_figures.log
+10:46:23 INFO    1401 of 1401 sample IDs carry literal quote characters
+10:46:23 INFO    phenotype: 933 cases, 468 controls
+10:46:23 INFO    sex .fam vs clinical: 0 disagreements (no X chromosome, so --check-sex is not available)
+10:46:23 INFO    covariate missingness: {'age': 0, 'tg': 92, 'hdl': 92, 'ldl': 119}
+10:46:26 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/figures/penncath_qc.png

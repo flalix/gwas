@@ -1,0 +1,228 @@
+20:20:18 INFO    logging to /home/flavio/uv/gwas/logs/05_fetch_wgs_data.log
+20:29:10 INFO    logging to /home/flavio/uv/gwas/logs/05_fetch_wgs_data.log
+20:29:33 INFO    logging to /home/flavio/uv/gwas/logs/05_fetch_wgs_data.log
+20:29:33 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/GRCh38_full_analysis_set_plus_decoy_hla.fa https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa
+20:56:48 INFO    ok (1635.0s)
+20:56:48 INFO    $ samtools faidx /home/flavio/uv/gwas/data/reference/GRCh38_full_analysis_set_plus_decoy_hla.fa
+20:56:53 INFO    ok (5.2s)
+20:56:53 INFO    $ gatk CreateSequenceDictionary -R /home/flavio/uv/gwas/data/reference/GRCh38_full_analysis_set_plus_decoy_hla.fa -O /home/flavio/uv/gwas/data/reference/GRCh38_full_analysis_set_plus_decoy_hla.dict
+20:56:59 INFO    ok (5.5s)
+20:56:59 INFO    building bwa index: ~31 min, ~4.7 GB RAM, 5.4 GB output
+20:56:59 INFO    $ bwa index /home/flavio/uv/gwas/data/reference/GRCh38_full_analysis_set_plus_decoy_hla.fa
+21:34:07 INFO    ok (2227.9s)
+21:34:07 INFO    $ wget -c -O /home/flavio/uv/gwas/data/NA12878/raw/NA12878.final.cram https://ftp.sra.ebi.ac.uk/vol1/run/ERR323/ERR3239334/NA12878.final.cram
+22:57:22 INFO    ok (4995.7s)
+22:57:22 INFO    collating + converting to FASTQ (scratch prefix /tmp/collate_NA12878)
+22:57:22 INFO    $ samtools collate -@ 16 -u -O --reference /home/flavio/uv/gwas/data/reference/GRCh38_full_analysis_set_plus_decoy_hla.fa /home/flavio/uv/gwas/data/NA12878/raw/NA12878.final.cram /tmp/collate_NA12878 | samtools fastq -@ 16 -1 /home/flavio/uv/gwas/data/NA12878/raw/NA12878_R1.fastq.gz -2 /home/flavio/uv/gwas/data/NA12878/raw/NA12878_R2.fastq.gz -0 /dev/null -s /dev/null -n -
+23:09:29 INFO    ok (726.5s)
+23:09:29 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr1.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr1.vcf.gz
+23:14:15 INFO    ok (285.6s)
+23:14:15 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr1.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr1.vcf.gz.csi
+23:14:16 INFO    ok (1.5s)
+23:14:16 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr1.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr1.vcf.gz
+23:14:39 INFO    ok (22.8s)
+23:14:39 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr1.vcf.gz
+23:14:47 INFO    ok (7.7s)
+23:14:47 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr2.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr2.vcf.gz
+23:21:18 INFO    ok (391.7s)
+23:21:18 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr2.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr2.vcf.gz.csi
+23:21:20 INFO    ok (1.7s)
+23:21:20 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr2.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr2.vcf.gz
+23:21:45 INFO    ok (24.6s)
+23:21:45 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr2.vcf.gz
+23:21:53 INFO    ok (8.1s)
+23:21:53 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr3.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr3.vcf.gz
+23:26:08 INFO    ok (255.0s)
+23:26:08 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr3.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr3.vcf.gz.csi
+23:26:09 INFO    ok (1.5s)
+23:26:09 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr3.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr3.vcf.gz
+23:26:31 INFO    ok (21.5s)
+23:26:31 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr3.vcf.gz
+23:26:37 INFO    ok (6.7s)
+23:26:37 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr4.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr4.vcf.gz
+23:32:12 INFO    ok (334.2s)
+23:32:12 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr4.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr4.vcf.gz.csi
+23:32:13 INFO    ok (1.6s)
+23:32:13 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr4.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr4.vcf.gz
+23:32:34 INFO    ok (20.4s)
+23:32:34 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr4.vcf.gz
+23:32:40 INFO    ok (6.4s)
+23:32:40 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr5.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr5.vcf.gz
+23:37:41 INFO    ok (300.9s)
+23:37:41 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr5.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr5.vcf.gz.csi
+23:37:43 INFO    ok (1.5s)
+23:37:43 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr5.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr5.vcf.gz
+23:38:01 INFO    ok (18.9s)
+23:38:01 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr5.vcf.gz
+23:38:08 INFO    ok (6.1s)
+23:38:08 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr6.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr6.vcf.gz
+23:41:01 INFO    ok (173.7s)
+23:41:01 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr6.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr6.vcf.gz.csi
+23:41:03 INFO    ok (1.5s)
+23:41:03 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr6.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr6.vcf.gz
+23:41:20 INFO    ok (17.7s)
+23:41:20 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr6.vcf.gz
+23:41:26 INFO    ok (5.7s)
+23:41:26 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr7.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr7.vcf.gz
+23:46:28 INFO    ok (301.5s)
+23:46:28 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr7.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr7.vcf.gz.csi
+23:46:29 INFO    ok (1.6s)
+23:46:29 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr7.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr7.vcf.gz
+23:46:47 INFO    ok (17.7s)
+23:46:47 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr7.vcf.gz
+23:46:52 INFO    ok (5.5s)
+23:46:52 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr8.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr8.vcf.gz
+23:50:05 INFO    ok (192.6s)
+23:50:05 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr8.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr8.vcf.gz.csi
+23:50:07 INFO    ok (1.5s)
+23:50:07 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr8.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr8.vcf.gz
+23:50:22 INFO    ok (15.4s)
+23:50:22 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr8.vcf.gz
+23:50:27 INFO    ok (5.1s)
+23:50:27 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr9.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr9.vcf.gz
+23:52:23 INFO    ok (115.9s)
+23:52:23 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr9.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr9.vcf.gz.csi
+23:52:24 INFO    ok (1.3s)
+23:52:24 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr9.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr9.vcf.gz
+23:52:37 INFO    ok (12.8s)
+23:52:37 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr9.vcf.gz
+23:52:41 INFO    ok (4.2s)
+23:52:41 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr10.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr10.vcf.gz
+23:56:00 INFO    ok (198.9s)
+23:56:00 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr10.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr10.vcf.gz.csi
+23:56:02 INFO    ok (1.3s)
+23:56:02 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr10.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr10.vcf.gz
+23:56:15 INFO    ok (13.8s)
+23:56:15 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr10.vcf.gz
+23:56:20 INFO    ok (4.5s)
+23:56:20 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr11.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr11.vcf.gz
+23:57:54 INFO    ok (93.7s)
+23:57:54 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr11.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr11.vcf.gz.csi
+23:57:55 INFO    ok (1.5s)
+23:57:55 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr11.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr11.vcf.gz
+23:58:10 INFO    ok (14.9s)
+23:58:10 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr11.vcf.gz
+23:58:15 INFO    ok (4.7s)
+23:58:15 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr12.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr12.vcf.gz
+00:00:49 INFO    ok (154.0s)
+00:00:49 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr12.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr12.vcf.gz.csi
+00:00:50 INFO    ok (1.3s)
+00:00:50 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr12.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr12.vcf.gz
+00:01:04 INFO    ok (13.9s)
+00:01:04 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr12.vcf.gz
+00:01:09 INFO    ok (4.5s)
+00:01:09 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr13.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr13.vcf.gz
+00:03:59 INFO    ok (170.8s)
+00:03:59 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr13.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr13.vcf.gz.csi
+00:04:01 INFO    ok (1.3s)
+00:04:01 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr13.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr13.vcf.gz
+00:04:12 INFO    ok (11.0s)
+00:04:12 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr13.vcf.gz
+00:04:15 INFO    ok (3.4s)
+00:04:15 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr14.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr14.vcf.gz
+00:07:05 INFO    ok (170.3s)
+00:07:05 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr14.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr14.vcf.gz.csi
+00:07:07 INFO    ok (1.3s)
+00:07:07 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr14.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr14.vcf.gz
+00:07:16 INFO    ok (8.9s)
+00:07:16 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr14.vcf.gz
+00:07:19 INFO    ok (3.0s)
+00:07:19 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr15.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr15.vcf.gz
+00:23:40 INFO    ok (981.1s)
+00:23:40 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr15.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr15.vcf.gz.csi
+00:23:42 INFO    ok (1.8s)
+00:23:42 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr15.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr15.vcf.gz
+00:23:50 INFO    ok (8.2s)
+00:23:50 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr15.vcf.gz
+00:23:53 INFO    ok (2.9s)
+00:23:53 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr16.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr16.vcf.gz
+00:26:29 INFO    ok (155.9s)
+00:26:29 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr16.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr16.vcf.gz.csi
+00:26:30 INFO    ok (1.5s)
+00:26:30 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr16.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr16.vcf.gz
+00:26:39 INFO    ok (9.2s)
+00:26:39 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr16.vcf.gz
+00:26:42 INFO    ok (3.1s)
+00:26:42 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr17.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr17.vcf.gz
+00:31:14 INFO    ok (272.0s)
+00:31:14 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr17.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr17.vcf.gz.csi
+00:31:16 INFO    ok (1.3s)
+00:31:16 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr17.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr17.vcf.gz
+00:31:24 INFO    ok (8.0s)
+00:31:24 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr17.vcf.gz
+00:31:27 INFO    ok (2.8s)
+00:31:27 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr18.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr18.vcf.gz
+00:33:32 INFO    ok (125.9s)
+00:33:32 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr18.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr18.vcf.gz.csi
+00:33:34 INFO    ok (1.3s)
+00:33:34 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr18.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr18.vcf.gz
+00:33:41 INFO    ok (7.7s)
+00:33:41 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr18.vcf.gz
+00:33:44 INFO    ok (2.7s)
+00:33:44 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr19.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr19.vcf.gz
+00:35:58 INFO    ok (133.5s)
+00:35:58 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr19.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr19.vcf.gz.csi
+00:35:59 INFO    ok (1.3s)
+00:35:59 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr19.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr19.vcf.gz
+00:36:05 INFO    ok (6.1s)
+00:36:05 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr19.vcf.gz
+00:36:07 INFO    ok (2.1s)
+00:36:07 INFO    homo_sapiens-chr20.vcf.gz already complete
+00:36:07 INFO    homo_sapiens-chr20.vcf.gz.csi already complete
+00:36:07 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr20.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr20.vcf.gz
+00:36:13 INFO    ok (6.2s)
+00:36:13 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr20.vcf.gz
+00:36:16 INFO    ok (2.2s)
+00:36:16 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr21.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr21.vcf.gz
+00:37:39 INFO    ok (83.0s)
+00:37:39 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr21.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr21.vcf.gz.csi
+00:37:40 INFO    ok (1.1s)
+00:37:40 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr21.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr21.vcf.gz
+00:37:44 INFO    ok (3.9s)
+00:37:44 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr21.vcf.gz
+00:37:45 INFO    ok (1.3s)
+00:37:45 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr22.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr22.vcf.gz
+00:38:07 INFO    ok (22.6s)
+00:38:07 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chr22.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chr22.vcf.gz.csi
+00:38:09 INFO    ok (1.1s)
+00:38:09 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chr22.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chr22.vcf.gz
+00:38:12 INFO    ok (3.9s)
+00:38:12 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chr22.vcf.gz
+00:38:14 INFO    ok (1.4s)
+00:38:14 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chrX.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chrX.vcf.gz
+00:41:17 INFO    ok (182.9s)
+00:41:17 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chrX.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chrX.vcf.gz.csi
+00:41:18 INFO    ok (1.3s)
+00:41:18 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chrX.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chrX.vcf.gz
+00:41:29 INFO    ok (11.5s)
+00:41:29 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chrX.vcf.gz
+00:41:33 INFO    ok (3.8s)
+00:41:33 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chrY.vcf.gz https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chrY.vcf.gz
+00:41:38 INFO    ok (4.8s)
+00:41:38 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/homo_sapiens-chrY.vcf.gz.csi https://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens-chrY.vcf.gz.csi
+00:41:39 INFO    ok (1.1s)
+00:41:39 INFO    $ bcftools annotate --rename-chrs /home/flavio/uv/gwas/data/reference/rename_chrs_all.txt --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/known_chrY.vcf.gz /home/flavio/uv/gwas/data/reference/homo_sapiens-chrY.vcf.gz
+00:41:40 INFO    ok (0.7s)
+00:41:40 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/known_chrY.vcf.gz
+00:41:40 INFO    ok (0.3s)
+00:41:40 INFO    concatenating 24 per-chromosome files
+00:41:40 INFO    $ bcftools concat --threads 16 -Oz -o /home/flavio/uv/gwas/data/reference/ensembl_known_sites_GRCh38.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr1.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr2.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr3.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr4.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr5.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr6.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr7.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr8.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr9.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr10.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr11.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr12.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr13.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr14.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr15.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr16.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr17.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr18.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr19.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr20.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr21.vcf.gz /home/flavio/uv/gwas/data/reference/known_chr22.vcf.gz /home/flavio/uv/gwas/data/reference/known_chrX.vcf.gz /home/flavio/uv/gwas/data/reference/known_chrY.vcf.gz
+00:42:53 INFO    ok (73.1s)
+00:42:53 INFO    $ bcftools index -t --threads 16 /home/flavio/uv/gwas/data/reference/ensembl_known_sites_GRCh38.vcf.gz
+00:44:31 INFO    ok (97.9s)
+00:44:32 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz https://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/NISTv4.2.1/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz
+00:44:44 INFO    ok (12.0s)
+00:44:44 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz.tbi https://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/NISTv4.2.1/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz.tbi
+00:44:45 INFO    ok (1.4s)
+00:44:45 INFO    $ wget -c -O /home/flavio/uv/gwas/data/reference/HG001_GRCh38_1_22_v4.2.1_benchmark.bed https://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/release/NA12878_HG001/NISTv4.2.1/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.bed
+00:44:47 INFO    ok (2.1s)
+00:44:47 INFO    manifest: /home/flavio/uv/gwas/data/NA12878/results/wgs_data_manifest.json
+10:24:27 INFO    logging to /home/flavio/uv/gwas/logs/05_fetch_wgs_data.log
+10:24:27 INFO    GRCh38_full_analysis_set_plus_decoy_hla.fa already complete
+10:24:27 INFO    NA12878.final.cram already complete
+10:24:27 INFO    FASTQ already present
+10:24:27 INFO    ensembl_known_sites_GRCh38.vcf.gz already present
+10:24:27 INFO    HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz already complete
+10:24:27 INFO    HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz.tbi already complete
+10:24:27 INFO    HG001_GRCh38_1_22_v4.2.1_benchmark.bed already complete
+10:24:27 INFO    manifest: /home/flavio/uv/gwas/data/NA12878/results/wgs_data_manifest.json

@@ -1,0 +1,166 @@
+10:41:45 INFO    logging to /home/flavio/uv/gwas/logs/01_setup.log
+10:41:45 INFO    project root: /home/flavio/uv/gwas
+10:41:45 INFO    created/verified 6 directories
+10:41:45 INFO    plink      PLINK v1.9.0-b.8 64-bit (22 Oct 2024)
+10:41:45 INFO    plink2     PLINK v2.0.0-a.6.9LM 64-bit Intel (29 Jan 2025)
+10:41:45 INFO    fastqc     Exception in thread "main" java.lang.InternalError: Error loading java.security file
+10:41:45 INFO    fastp      fastp 0.23.4
+10:41:45 INFO    samtools   samtools 1.24-47-gde749a60
+10:41:45 INFO    bcftools   bcftools 1.24-24-gedf7fd96
+10:41:45 INFO    bwa-mem2   not installed (only needed for the FASTQ track)
+10:41:45 INFO    gatk       not installed (only needed for the FASTQ track)
+10:41:45 INFO    multiqc    not installed (only needed for the FASTQ track)
+10:41:45 INFO    mosdepth   not installed (only needed for the FASTQ track)
+10:41:45 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/results/tool_versions.json
+10:53:20 INFO    logging to /home/flavio/uv/gwas/logs/01_setup.log
+10:53:20 INFO    project root: /home/flavio/uv/gwas
+10:53:20 INFO    created/verified 6 directories
+10:53:20 INFO    plink      PLINK v1.9.0-b.8 64-bit (22 Oct 2024)
+10:53:20 INFO    plink2     PLINK v2.0.0-a.6.9LM 64-bit Intel (29 Jan 2025)
+10:53:20 INFO    fastqc     Exception in thread "main" java.lang.InternalError: Error loading java.security file
+10:53:20 INFO    fastp      fastp 0.23.4
+10:53:20 INFO    samtools   samtools 1.24-47-gde749a60
+10:53:20 INFO    bcftools   bcftools 1.24-24-gedf7fd96
+10:53:20 INFO    bwa-mem2   not installed (only needed for the FASTQ track)
+10:53:20 INFO    gatk       not installed (only needed for the FASTQ track)
+10:53:20 INFO    multiqc    not installed (only needed for the FASTQ track)
+10:53:20 INFO    mosdepth   not installed (only needed for the FASTQ track)
+10:53:20 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/results/tool_versions.json
+11:22:54 INFO    logging to /home/flavio/uv/gwas/logs/01_setup.log
+11:22:54 INFO    project root: /home/flavio/uv/gwas
+11:22:54 INFO    conda env: /home/flavio/miniforge3/envs/genome_env
+11:22:54 INFO    created/verified 6 directories
+11:22:54 INFO    $ plink --version
+11:22:54 INFO    ok (0.0s)
+11:22:54 INFO    plink      PLINK v1.9.0-b.8 64-bit (22 Oct 2024)
+11:22:54 INFO    $ /home/flavio/.claude-science/conda/envs/gwas/bin/plink2 --version
+11:22:54 INFO    ok (0.0s)
+11:22:54 INFO    plink2     PLINK v2.0.0-a.6.9LM 64-bit Intel (29 Jan 2025)
+11:22:54 INFO    $ fastqc --version
+11:22:54 INFO    ok (0.1s)
+11:22:54 INFO    fastqc     FastQC v0.12.1
+11:22:54 INFO    $ fastp --version
+11:22:54 INFO    ok (0.0s)
+11:22:54 INFO    fastp      fastp 1.3.7
+11:22:54 INFO    $ samtools --version
+11:22:54 INFO    ok (0.0s)
+11:22:54 INFO    samtools   samtools 1.24
+11:22:54 INFO    $ bcftools --version
+11:22:54 INFO    ok (0.0s)
+11:22:54 INFO    bcftools   bcftools 1.24
+11:22:54 INFO    $ bwa-mem2 --version
+11:22:55 ERROR   exit 1 after 1.0s
+11:22:55 ERROR   stdout tail:
+
+11:22:55 ERROR   stderr tail:
+Looking to launch executable "/home/flavio/miniforge3/envs/genome_env/bin/bwa-mem2.avx2", simd = .avx2
+Launching executable "/home/flavio/miniforge3/envs/genome_env/bin/bwa-mem2.avx2"
+ERROR: unknown command '--version'
+11:22:55 INFO    bwa-mem2   Looking to launch executable "/home/flavio/miniforge3/envs/genome_env/bin/bwa-mem2.avx2", simd = .avx2
+11:22:55 INFO    $ gatk --version
+11:22:56 INFO    ok (0.9s)
+11:22:56 INFO    gatk       The Genome Analysis Toolkit (GATK) v4.6.2.0
+11:22:56 INFO    multiqc    not installed (only needed for the FASTQ track)
+11:22:56 INFO    mosdepth   not installed (only needed for the FASTQ track)
+11:22:56 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/results/tool_versions.json
+11:24:26 INFO    logging to /home/flavio/uv/gwas/logs/01_setup.log
+11:24:26 INFO    project root: /home/flavio/uv/gwas
+11:24:26 INFO    conda env: /home/flavio/miniforge3/envs/genome_env
+11:24:26 INFO    created/verified 6 directories
+11:24:26 INFO    $ plink --version
+11:24:26 INFO    ok (0.0s)
+11:24:26 INFO    plink      PLINK v1.9.0-b.8 64-bit (22 Oct 2024)
+11:24:26 INFO    $ /home/flavio/.claude-science/conda/envs/gwas/bin/plink2 --version
+11:24:26 INFO    ok (0.0s)
+11:24:26 INFO    plink2     PLINK v2.0.0-a.6.9LM 64-bit Intel (29 Jan 2025)
+11:24:26 INFO    $ fastqc --version
+11:24:27 INFO    ok (0.1s)
+11:24:27 INFO    fastqc     FastQC v0.12.1
+11:24:27 INFO    $ fastp --version
+11:24:27 INFO    ok (0.0s)
+11:24:27 INFO    fastp      fastp 1.3.7
+11:24:27 INFO    $ samtools --version
+11:24:27 INFO    ok (0.0s)
+11:24:27 INFO    samtools   samtools 1.24
+11:24:27 INFO    $ bcftools --version
+11:24:27 INFO    ok (0.0s)
+11:24:27 INFO    bcftools   bcftools 1.24
+11:24:27 INFO    $ bwa-mem2 version
+11:24:28 INFO    ok (1.0s)
+11:24:28 INFO    bwa-mem2   2.2.1
+11:24:28 INFO    $ gatk --version
+11:24:28 INFO    ok (0.7s)
+11:24:28 INFO    gatk       The Genome Analysis Toolkit (GATK) v4.6.2.0
+11:24:28 INFO    multiqc    not installed (only needed for the FASTQ track)
+11:24:28 INFO    mosdepth   not installed (only needed for the FASTQ track)
+11:24:28 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/results/tool_versions.json
+11:37:37 INFO    logging to /home/flavio/uv/gwas/logs/01_setup.log
+11:37:37 INFO    project root: /home/flavio/uv/gwas
+11:37:37 INFO    conda env: /home/flavio/miniforge3/envs/genome_env
+11:37:37 INFO    created/verified 6 directories
+11:37:37 INFO    $ plink --version
+11:37:37 INFO    ok (0.0s)
+11:37:37 INFO    plink      PLINK v1.9.0-b.8 64-bit (22 Oct 2024)
+11:37:37 INFO    $ plink2 --version
+11:37:37 INFO    ok (0.0s)
+11:37:37 INFO    plink2     PLINK v2.0.0-a.7.8 64-bit (19 Sep 2026)
+11:37:37 INFO    $ fastqc --version
+11:37:37 INFO    ok (0.0s)
+11:37:37 INFO    fastqc     FastQC v0.12.1
+11:37:37 INFO    $ fastp --version
+11:37:37 INFO    ok (0.0s)
+11:37:37 INFO    fastp      fastp 1.3.7
+11:37:37 INFO    $ samtools --version
+11:37:37 INFO    ok (0.0s)
+11:37:37 INFO    samtools   samtools 1.24
+11:37:37 INFO    $ bcftools --version
+11:37:37 INFO    ok (0.0s)
+11:37:37 INFO    bcftools   bcftools 1.24
+11:37:37 INFO    $ bwa-mem2 version
+11:37:38 INFO    ok (1.0s)
+11:37:38 INFO    bwa-mem2   2.2.1
+11:37:38 INFO    $ gatk --version
+11:37:39 INFO    ok (0.7s)
+11:37:39 INFO    gatk       The Genome Analysis Toolkit (GATK) v4.6.2.0
+11:37:39 INFO    $ multiqc --version
+11:37:39 INFO    ok (0.6s)
+11:37:39 INFO    multiqc    multiqc, version 1.35
+11:37:39 INFO    $ mosdepth --version
+11:37:39 INFO    ok (0.0s)
+11:37:39 INFO    mosdepth   mosdepth 0.3.14
+11:37:39 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/results/tool_versions.json
+11:41:15 INFO    logging to /home/flavio/uv/gwas/logs/01_setup.log
+11:41:15 INFO    project root: /home/flavio/uv/gwas
+11:41:15 INFO    conda env: /home/flavio/miniforge3/envs/genome_env
+11:41:15 INFO    created/verified 6 directories
+11:41:15 INFO    $ plink --version
+11:41:15 INFO    ok (0.0s)
+11:41:15 INFO    plink      PLINK v1.9.0-b.8 64-bit (22 Oct 2024)
+11:41:15 INFO    $ plink2 --version
+11:41:15 INFO    ok (0.0s)
+11:41:15 INFO    plink2     PLINK v2.0.0-a.7.8 64-bit (19 Sep 2026)
+11:41:15 INFO    $ fastqc --version
+11:41:15 INFO    ok (0.1s)
+11:41:15 INFO    fastqc     FastQC v0.12.1
+11:41:15 INFO    $ fastp --version
+11:41:15 INFO    ok (0.0s)
+11:41:15 INFO    fastp      fastp 1.3.7
+11:41:15 INFO    $ samtools --version
+11:41:15 INFO    ok (0.0s)
+11:41:15 INFO    samtools   samtools 1.24
+11:41:15 INFO    $ bcftools --version
+11:41:15 INFO    ok (0.0s)
+11:41:15 INFO    bcftools   bcftools 1.24
+11:41:15 INFO    $ bwa-mem2 version
+11:41:16 INFO    ok (1.0s)
+11:41:16 INFO    bwa-mem2   2.2.1
+11:41:16 INFO    $ gatk --version
+11:41:17 INFO    ok (0.7s)
+11:41:17 INFO    gatk       The Genome Analysis Toolkit (GATK) v4.6.2.0
+11:41:17 INFO    $ multiqc --version
+11:41:17 INFO    ok (0.5s)
+11:41:17 INFO    multiqc    multiqc, version 1.35
+11:41:17 INFO    $ mosdepth --version
+11:41:17 INFO    ok (0.0s)
+11:41:17 INFO    mosdepth   mosdepth 0.3.14
+11:41:17 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/results/tool_versions.json

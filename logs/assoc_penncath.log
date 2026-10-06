@@ -1,0 +1,140 @@
+14:18:49 INFO    logging to /home/flavio/uv/gwas/logs/assoc_penncath.log
+14:18:49 INFO    covariates for 1382 samples: sex, age, PC1, PC2, PC3, PC4
+14:18:49 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink2 --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --covar /home/flavio/uv/gwas/data/PennCATH/interim/penncath_assoc.covar --covar-variance-standardize --glm firth-fallback hide-covar --ci 0.95 --threads 16 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc
+14:19:00 INFO    ok (10.4s)
+14:19:00 INFO    association table: penncath_assoc.PHENO1.glm.logistic.hybrid
+14:19:00 INFO    696660 variants tested, 0 with a non-'.' ERRCODE
+14:19:00 INFO    Firth fallback used for 0 variants
+14:19:24 INFO    logging to /home/flavio/uv/gwas/logs/assoc_penncath.log
+14:19:24 INFO    696660 variants tested, 0 with a non-'.' ERRCODE
+14:19:24 INFO    Firth fallback used for 0 variants
+14:19:34 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --clump /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc.PHENO1.glm.logistic.hybrid --clump-snp-field ID --clump-field P --clump-p1 1e-05 --clump-p2 0.001 --clump-r2 0.1 --clump-kb 500 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_clump
+14:19:35 INFO    ok (0.3s)
+14:36:55 INFO    logging to /home/flavio/uv/gwas/logs/assoc_penncath.log
+14:36:55 INFO    covariates for 1382 samples: sex, age, PC1, PC2, PC3, PC4
+14:36:55 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink2 --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --covar /home/flavio/uv/gwas/data/PennCATH/interim/penncath_assoc.covar --covar-variance-standardize --glm firth-fallback hide-covar --ci 0.95 --threads 16 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc
+14:37:05 INFO    ok (10.2s)
+14:37:05 INFO    association table: penncath_assoc.PHENO1.glm.logistic.hybrid
+14:37:06 INFO    696660 variants tested, 0 with a non-'.' ERRCODE
+14:37:06 INFO    Firth fallback used for 0 variants
+14:37:07 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --clump /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc.PHENO1.glm.logistic.hybrid --clump-snp-field ID --clump-field P --clump-p1 1e-05 --clump-p2 0.001 --clump-r2 0.1 --clump-kb 500 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_clump
+14:37:08 INFO    ok (0.3s)
+14:38:16 INFO    logging to /home/flavio/uv/gwas/logs/assoc_penncath.log
+14:38:16 INFO    covariates for 1382 samples: sex, age, PC1, PC2, PC3, PC4
+14:38:16 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink2 --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --covar /home/flavio/uv/gwas/data/PennCATH/interim/penncath_assoc.covar --covar-variance-standardize --glm firth-fallback hide-covar --ci 0.95 --threads 16 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc
+14:38:27 INFO    ok (10.4s)
+14:38:27 INFO    association table: penncath_assoc.PHENO1.glm.logistic.hybrid
+14:38:27 INFO    696660 variants tested, 0 with a non-'.' ERRCODE
+14:38:27 INFO    Firth fallback used for 0 variants
+14:38:28 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --clump /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc.PHENO1.glm.logistic.hybrid --clump-snp-field ID --clump-field P --clump-p1 1e-05 --clump-p2 0.001 --clump-r2 0.1 --clump-kb 500 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_clump
+14:38:29 INFO    ok (0.3s)
+14:38:33 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --r2 --ld-snp rs9632884 --ld-window-kb 1000 --ld-window 99999 --ld-window-r2 0 --chr 9 --from-bp 21572301 --to-bp 22572301 --out /home/flavio/uv/gwas/data/PennCATH/interim/ld_9p21
+14:38:33 INFO    ok (0.1s)
+14:38:33 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --r2 --ld-snp rs4957723 --ld-window-kb 1000 --ld-window 99999 --ld-window-r2 0 --chr 5 --from-bp 106657011 --to-bp 107657011 --out /home/flavio/uv/gwas/data/PennCATH/interim/ld_5q21
+14:38:33 INFO    ok (0.0s)
+14:38:35 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/figures/penncath_manhattan_qq.png
+14:38:35 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/figures/penncath_loci.png
+14:39:31 INFO    logging to /home/flavio/uv/gwas/logs/assoc_penncath.log
+14:39:31 INFO    covariates for 1382 samples: sex, age, PC1, PC2, PC3, PC4
+14:39:31 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink2 --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --covar /home/flavio/uv/gwas/data/PennCATH/interim/penncath_assoc.covar --covar-variance-standardize --glm firth-fallback hide-covar --ci 0.95 --threads 16 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc
+14:39:41 INFO    ok (10.5s)
+14:39:41 INFO    association table: penncath_assoc.PHENO1.glm.logistic.hybrid
+14:39:42 INFO    696660 variants tested, 0 with a non-'.' ERRCODE
+14:39:42 INFO    Firth fallback used for 0 variants
+14:39:43 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --clump /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc.PHENO1.glm.logistic.hybrid --clump-snp-field ID --clump-field P --clump-p1 1e-05 --clump-p2 0.001 --clump-r2 0.1 --clump-kb 500 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_clump
+14:39:43 INFO    ok (0.3s)
+14:39:48 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --r2 --ld-snp rs9632884 --ld-window-kb 1000 --ld-window 99999 --ld-window-r2 0 --chr 9 --from-bp 21572301 --to-bp 22572301 --out /home/flavio/uv/gwas/data/PennCATH/interim/ld_9p21
+14:39:48 INFO    ok (0.1s)
+14:39:48 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --r2 --ld-snp rs4957723 --ld-window-kb 1000 --ld-window 99999 --ld-window-r2 0 --chr 5 --from-bp 106657011 --to-bp 107657011 --out /home/flavio/uv/gwas/data/PennCATH/interim/ld_5q21
+14:39:48 INFO    ok (0.1s)
+14:39:50 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/figures/penncath_manhattan_qq.png
+14:39:50 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/figures/penncath_loci.png
+15:05:32 INFO    logging to /home/flavio/uv/gwas/logs/assoc_penncath.log
+15:05:47 INFO    covariates for 1382 samples: sex, age, PC1, PC2, PC3, PC4
+15:07:38 INFO    covariates for 1382 samples: sex, age, PC1, PC2, PC3, PC4
+15:08:33 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink2 --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --covar         FID  IID       PC1       PC2       PC3       PC4  sex  age
+0     10002    1  0.012013 -0.013698 -0.011841 -0.021991    1   60
+1     10004    1 -0.012775 -0.005919  0.011620  0.034670    2   50
+2     10005    1 -0.016200  0.007924 -0.030831  0.009019    1   55
+3     10007    1 -0.012499  0.002729 -0.011172 -0.001052    1   52
+4     10008    1 -0.016935 -0.004122 -0.010585  0.004612    1   58
+...     ...  ...       ...       ...       ...       ...  ...  ...
+1377  11591    1 -0.017686  0.003817 -0.010274 -0.027425    2   59
+1378  11592    1 -0.015167  0.005951  0.077045  0.031477    1   45
+1379  11593    1 -0.017810  0.004873  0.000801  0.048029    1   59
+1380  11594    1 -0.013346  0.015926  0.000219 -0.023450    1   30
+1381  11596    1 -0.011252 -0.005478  0.000316  0.007123    1   64
+
+[1382 rows x 8 columns] --covar-variance-standardize --glm firth-fallback hide-covar --ci 0.95 --threads 14 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc
+15:08:33 ERROR   exit 3 after 0.0s
+15:08:33 ERROR   stdout tail:
+(C) 2005-2026 Shaun Purcell, Christopher Chang    GNU General Public License v3
+Logging to /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc.log.
+Options in effect:
+  --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc
+  --ci 0.95
+  --covar         FID  IID       PC1       PC2       PC3       PC4  sex  age
+0     10002    1  0.012013 -0.013698 -0.011841 -0.021991    1   60
+1     10004    1 -0.012775 -0.005919  0.011620  0.034670    2   50
+2     10005    1 -0.016200  0.007924 -0.030831  0.009019    1   55
+3     10007    1 -0.012499  0.002729 -0.011172 -0.001052    1   52
+4     10008    1 -0.016935 -0.004122 -0.010585  0.004612    1   58
+...     ...  ...       ...       ...       ...       ...  ...  ...
+1377  11591    1 -0.017686  0.003817 -0.010274 -0.027425    2   59
+1378  11592    1 -0.015167  0.005951  0.077045  0.031477    1   45
+1379  11593    1 -0.017810  0.004873  0.000801  0.048029    1   59
+1380  11594    1 -0.013346  0.015926  0.000219 -0.023450    1   30
+1381  11596    1 -0.011252 -0.005478  0.000316  0.007123    1   64
+
+[1382 rows x 8 columns]
+  --covar-variance-standardize
+  --glm firth-fallback hide-covar
+  --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc
+  --threads 14
+
+Start time: Tue Oct  6 15:08:33 2026
+15:08:33 ERROR   stderr tail:
+Error: --covar:         FID  IID       PC1       PC2       PC3       PC4  sex 
+age
+0     10002    1  0.012013 -0.013698 -0.011841 -0.021991    1   60
+1    
+10004    1 -0.012775 -0.005919  0.011620  0.034670    2   50
+2     10005    1
+-0.016200  0.007924 -0.030831  0.009019    1   55
+3     10007    1 -0.012499 
+0.002729 -0.011172 -0.001052    1   52
+4     10008    1 -0.016935 -0.004122
+-0.010585  0.004612    1   58
+...     ...  ...       ...       ...       ...   
+   ...  ...  ...
+1377  11591    1 -0.017686  0.003817 -0.010274 -0.027425    2 
+ 59
+1378  11592    1 -0.015167  0.005951  0.077045  0.031477    1   45
+1379 
+11593    1 -0.017810  0.004873  0.000801  0.048029    1   59
+1380  11594    1
+-0.013346  0.015926  0.000219 -0.023450    1   30
+1381  11596    1 -0.011252
+-0.005478  0.000316  0.007123    1   64
+
+[1382 rows x 8 columns] does not
+exist.
+15:08:51 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink2 --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --covar /home/flavio/uv/gwas/data/PennCATH/interim/penncath_assoc.covar --covar-variance-standardize --glm firth-fallback hide-covar --ci 0.95 --threads 14 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc
+15:09:02 INFO    ok (10.8s)
+15:09:02 INFO    association table: penncath_assoc.PHENO1.glm.logistic.hybrid
+15:09:22 INFO    696660 variants tested, 0 with a non-'.' ERRCODE
+15:09:22 INFO    Firth fallback used for 0 variants
+15:09:33 INFO    696660 variants tested, 0 with a non-'.' ERRCODE
+15:09:33 INFO    Firth fallback used for 0 variants
+15:12:11 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --clump /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc.PHENO1.glm.logistic.hybrid --clump-snp-field ID --clump-field P --clump-p1 1e-05 --clump-p2 0.001 --clump-r2 0.1 --clump-kb 500 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_clump
+15:12:11 INFO    ok (0.3s)
+15:12:23 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --clump /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc.PHENO1.glm.logistic.hybrid --clump-snp-field ID --clump-field P --clump-p1 1e-05 --clump-p2 0.001 --clump-r2 0.1 --clump-kb 500 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_clump
+15:12:23 INFO    ok (0.3s)
+15:12:42 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --clump /home/flavio/uv/gwas/data/PennCATH/results/penncath_assoc.PHENO1.glm.logistic.hybrid --clump-snp-field ID --clump-field P --clump-p1 1e-05 --clump-p2 0.001 --clump-r2 0.1 --clump-kb 500 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_clump
+15:12:42 INFO    ok (0.3s)
+15:17:34 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --r2 --ld-snp rs9632884 --ld-window-kb 1000 --ld-window 99999 --ld-window-r2 0 --chr 9 --from-bp 21572301 --to-bp 22572301 --out /home/flavio/uv/gwas/data/PennCATH/interim/ld_9p21
+15:17:34 INFO    ok (0.1s)
+15:17:34 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc --r2 --ld-snp rs4957723 --ld-window-kb 1000 --ld-window 99999 --ld-window-r2 0 --chr 5 --from-bp 106657011 --to-bp 107657011 --out /home/flavio/uv/gwas/data/PennCATH/interim/ld_5q21
+15:17:34 INFO    ok (0.1s)
+15:18:09 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/figures/penncath_manhattan_qq.png
+15:18:09 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/figures/penncath_loci.png

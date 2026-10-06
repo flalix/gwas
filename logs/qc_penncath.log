@@ -1,0 +1,158 @@
+11:27:54 INFO    logging to /home/flavio/uv/gwas/logs/qc_penncath.log
+11:29:14 INFO    logging to /home/flavio/uv/gwas/logs/qc_penncath.log
+11:29:23 INFO    logging to /home/flavio/uv/gwas/logs/qc_penncath.log
+11:31:09 INFO    logging to /home/flavio/uv/gwas/logs/qc_penncath.log
+11:35:02 INFO    [00_raw] 861473 variants x 1401 samples
+11:35:02 INFO    1401 of 1401 sample IDs carry literal quote characters
+11:35:02 INFO    phenotype: 933 cases, 468 controls
+11:35:02 INFO    sex .fam vs clinical: 0 disagreements (no X chromosome, so --check-sex is not available)
+11:35:02 INFO    covariate missingness: {'age': 0, 'tg': 92, 'hdl': 92, 'ldl': 119}
+11:46:52 INFO    [00_raw] 861473 variants x 1401 samples
+11:46:52 INFO    1401 of 1401 sample IDs carry literal quote characters
+11:46:52 INFO    phenotype: 933 cases, 468 controls
+11:46:52 INFO    sex .fam vs clinical: 0 disagreements (no X chromosome, so --check-sex is not available)
+11:46:52 INFO    covariate missingness: {'age': 0, 'tg': 92, 'hdl': 92, 'ldl': 119}
+11:56:02 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/raw/penncath --update-ids /home/flavio/uv/gwas/data/PennCATH/interim/penncath.update_ids --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/01a_ids
+11:56:03 INFO    ok (0.7s)
+11:56:03 INFO    [01a_ids_unquoted] 861473 variants x 1401 samples
+12:40:02 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01a_ids --pheno /home/flavio/uv/gwas/data/PennCATH/interim/penncath.pheno --pheno-name CAD --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno
+12:40:03 INFO    ok (0.6s)
+12:40:03 INFO    [01b_phenotype] 861473 variants x 1401 samples
+12:40:03 INFO    phenotype in .fam: 933 cases, 468 controls, 0 missing
+13:16:18 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01a_ids --pheno /home/flavio/uv/gwas/data/PennCATH/interim/penncath.pheno --pheno-name CAD --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno
+13:16:18 INFO    ok (0.6s)
+13:16:19 INFO    [01b_phenotype] 861473 variants x 1401 samples
+13:16:19 INFO    phenotype in .fam: 933 cases, 468 controls, 0 missing
+13:18:29 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01a_ids --pheno /home/flavio/uv/gwas/data/PennCATH/interim/penncath.pheno --pheno-name CAD --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno
+13:18:30 INFO    ok (0.6s)
+13:18:30 INFO    [01b_phenotype] 861473 variants x 1401 samples
+13:18:30 INFO    phenotype in .fam: 933 cases, 468 controls, 0 missing
+13:18:56 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01a_ids --pheno /home/flavio/uv/gwas/data/PennCATH/interim/penncath.pheno --pheno-name CAD --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno
+13:18:56 INFO    ok (0.6s)
+13:18:56 INFO    [01b_phenotype] 861473 variants x 1401 samples
+13:18:56 INFO    phenotype in .fam: 933 cases, 468 controls, 0 missing
+13:20:37 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno --missing --out /home/flavio/uv/gwas/data/PennCATH/interim/rep_missing
+13:20:37 INFO    ok (0.4s)
+13:20:37 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno --freq --out /home/flavio/uv/gwas/data/PennCATH/interim/rep_freq
+13:20:37 INFO    ok (0.3s)
+13:20:37 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno --hardy --out /home/flavio/uv/gwas/data/PennCATH/interim/rep_hardy
+13:20:38 INFO    ok (0.7s)
+13:21:55 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno --geno 0.1 --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/02a_geno
+13:21:56 INFO    ok (0.6s)
+13:21:56 INFO    [02a_geno<0.1] 814081 variants x 1401 samples
+13:22:23 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/02a_geno --mind 0.1 --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/02b_mind
+13:22:24 INFO    ok (0.7s)
+13:22:24 INFO    [02b_mind<0.1] 814081 variants x 1401 samples
+13:23:13 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/02b_mind --maf 0.01 --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/03a_maf
+13:23:14 INFO    ok (0.5s)
+13:23:14 INFO    [03a_maf>0.01] 697479 variants x 1401 samples
+13:23:42 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03a_maf --hwe 1e-10 midp --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe
+13:23:42 INFO    ok (0.6s)
+13:23:42 INFO    [03b_hwe>1e-10] 696660 variants x 1401 samples
+13:25:38 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe --indep-pairwise 50 5 0.2 --out /home/flavio/uv/gwas/data/PennCATH/interim/pruned
+13:25:39 INFO    ok (0.9s)
+13:25:39 INFO    LD pruning kept 116591 independent variants
+13:28:23 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe --extract /home/flavio/uv/gwas/data/PennCATH/interim/pruned.prune.in --het --out /home/flavio/uv/gwas/data/PennCATH/interim/rep_het
+13:28:23 INFO    ok (0.3s)
+13:28:23 INFO    heterozygosity F mean -0.0065 sd 0.0147 -> 19 outliers beyond 3.0 SD
+13:31:21 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe --remove /home/flavio/uv/gwas/data/PennCATH/interim/het_outliers.remove --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/04_het
+13:31:21 INFO    ok (0.6s)
+13:31:21 INFO    [04_het_outliers_removed] 696660 variants x 1382 samples
+13:31:51 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe --remove /home/flavio/uv/gwas/data/PennCATH/interim/het_outliers.remove --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/04_het
+13:31:51 INFO    ok (0.6s)
+13:31:51 INFO    [04_het_outliers_removed] 696660 variants x 1382 samples
+13:32:09 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe --extract /home/flavio/uv/gwas/data/PennCATH/interim/pruned.prune.in --het --out /home/flavio/uv/gwas/data/PennCATH/interim/rep_het
+13:32:10 INFO    ok (0.3s)
+13:32:10 INFO    heterozygosity F mean -0.0065 sd 0.0147 -> 19 outliers beyond 3.0 SD
+13:32:11 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe --remove /home/flavio/uv/gwas/data/PennCATH/interim/het_outliers.remove --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/04_het
+13:32:11 INFO    ok (0.6s)
+13:32:11 INFO    [04_het_outliers_removed] 696660 variants x 1382 samples
+13:32:42 INFO    logging to /home/flavio/uv/gwas/logs/qc_penncath.log
+13:32:43 INFO    [00_raw] 861473 variants x 1401 samples
+13:32:44 INFO    1401 of 1401 sample IDs carry literal quote characters
+13:32:45 INFO    phenotype: 933 cases, 468 controls
+13:32:45 INFO    sex .fam vs clinical: 0 disagreements (no X chromosome, so --check-sex is not available)
+13:32:45 INFO    covariate missingness: {'age': 0, 'tg': 92, 'hdl': 92, 'ldl': 119}
+13:32:45 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/raw/penncath --update-ids /home/flavio/uv/gwas/data/PennCATH/interim/penncath.update_ids --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/01a_ids
+13:32:46 INFO    ok (0.7s)
+13:32:47 INFO    [01a_ids_unquoted] 861473 variants x 1401 samples
+13:32:47 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01a_ids --pheno /home/flavio/uv/gwas/data/PennCATH/interim/penncath.pheno --pheno-name CAD --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno
+13:32:48 INFO    ok (0.6s)
+13:32:48 INFO    [01b_phenotype] 861473 variants x 1401 samples
+13:32:48 INFO    phenotype in .fam: 933 cases, 468 controls, 0 missing
+13:32:48 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno --missing --out /home/flavio/uv/gwas/data/PennCATH/interim/rep_missing
+13:32:49 INFO    ok (0.4s)
+13:32:49 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno --freq --out /home/flavio/uv/gwas/data/PennCATH/interim/rep_freq
+13:32:49 INFO    ok (0.3s)
+13:32:49 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno --hardy --out /home/flavio/uv/gwas/data/PennCATH/interim/rep_hardy
+13:32:50 INFO    ok (0.7s)
+13:32:50 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/01b_pheno --geno 0.1 --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/02a_geno
+13:32:50 INFO    ok (0.6s)
+13:32:51 INFO    [02a_geno<0.1] 814081 variants x 1401 samples
+13:32:51 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/02a_geno --mind 0.1 --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/02b_mind
+13:32:52 INFO    ok (0.7s)
+13:32:53 INFO    [02b_mind<0.1] 814081 variants x 1401 samples
+13:32:53 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/02b_mind --maf 0.01 --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/03a_maf
+13:32:53 INFO    ok (0.6s)
+13:32:54 INFO    [03a_maf>0.01] 697479 variants x 1401 samples
+13:32:54 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03a_maf --hwe 1e-10 midp --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe
+13:32:55 INFO    ok (0.7s)
+13:32:56 INFO    [03b_hwe>1e-10] 696660 variants x 1401 samples
+13:32:56 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe --indep-pairwise 50 5 0.2 --out /home/flavio/uv/gwas/data/PennCATH/interim/pruned
+13:32:56 INFO    ok (0.9s)
+13:32:57 INFO    LD pruning kept 116591 independent variants
+13:32:57 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe --extract /home/flavio/uv/gwas/data/PennCATH/interim/pruned.prune.in --het --out /home/flavio/uv/gwas/data/PennCATH/interim/rep_het
+13:32:57 INFO    ok (0.3s)
+13:32:57 INFO    heterozygosity F mean -0.0065 sd 0.0147 -> 19 outliers beyond 3.0 SD
+13:32:57 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe --remove /home/flavio/uv/gwas/data/PennCATH/interim/het_outliers.remove --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/04_het
+13:32:58 INFO    ok (0.6s)
+13:32:59 INFO    [04_het_outliers_removed] 696660 variants x 1382 samples
+13:40:27 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink2 --bfile /home/flavio/uv/gwas/data/PennCATH/interim/04_het --extract /home/flavio/uv/gwas/data/PennCATH/interim/pruned.prune.in --make-king-table --king-table-filter 0.0884 --out /home/flavio/uv/gwas/data/PennCATH/interim/rep_king
+13:40:27 INFO    ok (0.6s)
+13:40:27 INFO    0 sample pairs with kinship > 0.0884
+13:40:27 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink2 --bfile /home/flavio/uv/gwas/data/PennCATH/interim/04_het --extract /home/flavio/uv/gwas/data/PennCATH/interim/pruned.prune.in --king-cutoff 0.0884 --out /home/flavio/uv/gwas/data/PennCATH/interim/05_king
+13:40:28 INFO    ok (0.5s)
+13:40:28 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink2 --bfile /home/flavio/uv/gwas/data/PennCATH/interim/04_het --keep /home/flavio/uv/gwas/data/PennCATH/interim/05_king.king.cutoff.in.id --make-bed --out /home/flavio/uv/gwas/data/PennCATH/interim/05_unrelated
+13:40:28 INFO    ok (0.3s)
+13:40:29 INFO    [05_unrelated] 696660 variants x 1382 samples
+13:42:00 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/results/qc_summary.csv
+                  stage  variants  samples  variants_lost  samples_lost
+                 00_raw    861473     1401              0             0
+       01a_ids_unquoted    861473     1401              0             0
+          01b_phenotype    861473     1401              0             0
+           02a_geno<0.1    814081     1401          47392             0
+           02b_mind<0.1    814081     1401              0             0
+           03a_maf>0.01    697479     1401         116602             0
+          03b_hwe>1e-10    696660     1401            819             0
+04_het_outliers_removed    696660     1382              0            19
+           05_unrelated    696660     1382              0             0
+13:42:46 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink2 --bfile /home/flavio/uv/gwas/data/PennCATH/interim/05_unrelated --pca 10 --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_pca
+13:43:29 INFO    ok (43.1s)
+13:43:29 INFO    $ /home/flavio/miniforge3/envs/genome_env/bin/plink --bfile /home/flavio/uv/gwas/data/PennCATH/interim/03b_hwe --keep /home/flavio/uv/gwas/data/PennCATH/interim/05_unrelated.fam --make-bed --out /home/flavio/uv/gwas/data/PennCATH/results/penncath_qc
+13:43:30 INFO    ok (0.6s)
+13:43:30 INFO    [06_final] 696660 variants x 1382 samples
+13:43:30 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/results/qc_summary.csv
+                  stage  variants  samples  variants_lost  samples_lost
+                 00_raw    861473     1401              0             0
+       01a_ids_unquoted    861473     1401              0             0
+          01b_phenotype    861473     1401              0             0
+           02a_geno<0.1    814081     1401          47392             0
+           02b_mind<0.1    814081     1401              0             0
+           03a_maf>0.01    697479     1401         116602             0
+          03b_hwe>1e-10    696660     1401            819             0
+04_het_outliers_removed    696660     1382              0            19
+           05_unrelated    696660     1382              0             0
+               06_final    696660     1382              0             0
+13:43:38 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/figures/penncath_qc.png
+13:43:38 INFO    wrote /home/flavio/uv/gwas/data/PennCATH/results/qc_summary.csv
+                  stage  variants  samples  variants_lost  samples_lost
+                 00_raw    861473     1401              0             0
+       01a_ids_unquoted    861473     1401              0             0
+          01b_phenotype    861473     1401              0             0
+           02a_geno<0.1    814081     1401          47392             0
+           02b_mind<0.1    814081     1401              0             0
+           03a_maf>0.01    697479     1401         116602             0
+          03b_hwe>1e-10    696660     1401            819             0
+04_het_outliers_removed    696660     1382              0            19
+           05_unrelated    696660     1382              0             0
+               06_final    696660     1382              0             0

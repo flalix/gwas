@@ -1,0 +1,249 @@
+/* about */
+
+#welcome {
+  background-image: url("/assets/black_linen_v2-f2bf5e0f.png");
+  background-color: #343434;
+  color: white;
+  margin-top: 50px;
+}
+#welcome h1#welcome-title {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 40px;
+  text-shadow: 2px 2px 0 black;
+}
+#welcome h2#welcome-intro {
+  margin: 20px 40px 12px;
+  font-size: 24px;
+  line-height: 180%;
+  text-shadow: 1px 1px 0 black;
+}
+#welcome h2#welcome-intro a {
+  color: #CCF;
+}
+#welcome #welcome-button {
+  margin-left: 40px;
+}
+
+/* pub */
+
+.pubrow3 {
+  clear: both;
+}
+@media screen and (max-width: 860px) {
+  .pubrow3 {
+    clear: none;
+  }
+  .pubrow2 {
+    clear: both;
+  }
+}
+#infscr-loading {
+  clear: both;
+  margin-bottom: -20px;
+  position: relative;
+  top: -24px;
+}
+
+/* application */
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+body {
+  font-family: "Lucida Grande", "Helvetica";
+  font-size: 13px;
+  color: #333;
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+}
+.announcement-banner {
+  background-color: #f2fbec;
+  border-bottom: 1px solid #e9f7d7;
+  color: #7a8c6b;
+  font-size: 14px;
+  padding: 6px;
+  text-align: center;
+}
+.announcement-banner-link {
+  color: inherit;
+  text-decoration: underline;
+}
+.announcement-banner strong {
+  font-weight: 700;
+}
+#main {
+  background-color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  padding-top: 15px;
+  min-height: 100%;
+}
+#pageheader {
+  color: #555;
+  margin-bottom: 10px;
+}
+#branding {
+  display: inline-block;
+  font-family: adelle;
+  font-weight: 300;
+  font-style: italic;
+  white-space: nowrap;
+}
+#branding h1 {
+  display: inline-block;
+  font-size: 24pt;
+  font-weight: 300;
+  font-style: italic;
+  margin: 0 8px 0 0;
+}
+#branding h1 #R {
+  font-weight: 700;
+  color: orange;
+}
+#branding #tagline {
+  font-size: 10pt;
+  color: #888;
+  white-space: nowrap;
+}
+#logo a {
+  color: inherit;
+  text-decoration: none;
+}
+#identity {
+  float: right;
+}
+#breadcrumb {
+  font-family: Helvetica;
+  font-weight: 400;
+  color: #eee;
+  border-top: 1px dotted #555;
+  margin: 0 -10px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+#breadcrumb a {
+  color: inherit;
+}
+#comments {
+  position: absolute;
+  right: 0;
+  top: 49px;
+  width: 170px;
+  height: 29px;
+  background-color: #393;
+  z-index: 10;
+  text-align: center;
+  font-family: adelle;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  padding-top: 6px;
+}
+#pagebody {
+}
+.pagebodyhead {
+  background-color: #eee;
+  margin: 0 -40px;
+  padding: 15px 40px;
+}
+.userblock {
+}
+.userblock img {
+  float: left;
+  padding: 3px;
+  border: 1px solid #ccc;
+  margin: 0 20px 8px 0;
+  clear: both;
+}
+#pagebody h1 {
+  font-family: adelle;
+  font-size: 35px;
+  font-weight: 300;
+  font-style: normal;
+  margin: 40px 0 20px 0;
+}
+#pagebody h1.nomarginbottom {
+  margin-bottom: 0;
+}
+#pagebody h2 {
+  font-family: adelle;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 24px;
+  margin: 19px 0;
+}
+#pagebody h3 {
+  font-family: adelle;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+}
+#main .userblock h1 {
+  margin: 0;
+  line-height: normal;
+  font-weight: 700;
+}
+#main .userblock h3 {
+  font-family: adelle;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  margin: 0;
+}
+.pubtile {
+  float: left;
+  padding: 0 30px 40px 0;
+}
+.pubtile img.pubthumb {
+  box-shadow: 0 1px 3px #888;
+  width: 200px;
+  height: 200px;
+}
+.pubtile .pubinfo {
+  width: 225px;
+}
+.pubtile .pubinfo h5 {
+  font-size: 100%;
+  margin: 0;
+  margin-top: 4px;
+}
+.pubtile .pubinfo time {
+  color: #888;
+  font-style: italic;
+}
+/* Keeps pub rows from interfering with each other */
+.pubrow3 {
+  clear: both;
+}
+@media screen and (max-width: 860px) {
+  .pubrow3 {
+    clear: none;
+  }
+  .pubrow2 {
+    clear: both;
+  }
+}
+.clearfix {
+  clear: both;
+}
+
+.btn-large {
+  font-weight: bold;
+}
+
+.navbar .nav > li > label {
+  display: block;
+  float: none;
+  /* Vertically center the text given 40px navbar height */
+  padding: 9px 10px 11px;
+  line-height: 19px;
+  color: #999999;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}

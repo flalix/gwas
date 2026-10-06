@@ -1,0 +1,8 @@
+20:20:18 INFO    logging to /home/flavio/uv/gwas/logs/pipe_test.log
+20:20:18 INFO    $ printf b
+a
+c
+ | sort | tr a-z A-Z > /tmp/pipe_test.txt
+20:20:18 INFO    ok (0.0s)
+20:20:18 INFO    $ false | cat
+20:20:18 ERROR   stage bash exited 1: 
